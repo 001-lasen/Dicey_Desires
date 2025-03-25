@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -22,9 +23,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.dicey_desires.R
 import com.example.dicey_desires.about_page.ui.theme.Dicey_DesiresTheme
 
@@ -45,6 +49,9 @@ class AboutPage : ComponentActivity() {
 @Composable
 fun Content(modifier: Modifier = Modifier) {
     val context = LocalContext.current
+    val customFontFamily = FontFamily(
+        Font(R.font.allura_regular)
+    )
     Box(
         modifier = modifier.fillMaxSize()
     ) {
@@ -65,20 +72,24 @@ fun Content(modifier: Modifier = Modifier) {
                 .padding(top = 96.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "Name: P. L. V. Punyawardana")
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(text = "UoW ID: W1953536")
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(text = "IIT ID: 20220029")
-            Spacer(modifier = Modifier.height(32.dp))
             Text(
-                text = "I confirm that I understand what plagiarism is and have read and" +
-                        "understood the section on Assessment Offences in the Essential" +
-                        "Information for Students. The work that I have submitted is" +
-                        "entirely my own. Any work from other authors is duly referenced" +
-                        "and acknowledged.",
-                textAlign = TextAlign.Center,
-                modifier = Modifier.padding(horizontal = 16.dp)
+                text = "About",
+                fontSize = 48.sp,
+                fontFamily = customFontFamily
+            )
+            Spacer(modifier = Modifier.padding(16.dp))
+            Text(
+                text = "Welcome to the ultimate dice-rolling showdown where luck, strategy, " +
+                        "and a little bit of mischief collide! Whether you're feeling bold or just " +
+                        "looking for a little risky fun, this game will keep you on the edge—rolling, " +
+                        "re-rolling, and hoping for that perfect match. But be careful… one wrong move, " +
+                        "and you might just get played. Are you ready to take a chance and roll " +
+                        "your way to victory? ",
+                textAlign = TextAlign.Justify,
+                modifier = Modifier
+                    .padding(horizontal = 16.dp)
+                    .fillMaxWidth()
+                    .align(Alignment.CenterHorizontally)
             )
             Spacer(modifier = Modifier.height(64.dp))
             Image(
