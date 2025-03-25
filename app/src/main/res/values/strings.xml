@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dicey_Desires</string>
+    <string name="app_name">Dicey Desires</string>
     <string name="title_activity_home_page">HomePage</string>
     <string name="title_activity_about_page">AboutPage</string>
     <string name="title_activity_new_game">NewGame</string>
